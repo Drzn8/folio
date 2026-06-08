@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishekdarsan P B - Developer Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+        <nav class="nav" aria-label="Main Navigation">
+            <div class="container nav-inner">
+                <span class="logo">Abhishekdarsan P B</span>
+                <ul class="nav-links">
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><button class="theme-btn" id="theme-toggle" aria-label="Toggle dark mode">&#127769;</button></li>
+                </ul>
+            </div>
+        </nav>
+
+        <header class="hero" id="home">
+            <div class="container">
+                <p class="hero-tag reveal">Hey, I'm</p>
+                <h1 class="hero-name reveal">Abhishekdarsan P B</h1>
+                <p class="hero-role reveal">A passionate developer specializing in web and mobile applications. <span class="highlight">B.Tech ECE, Kerala</span></p>
+                <p class="hero-bio reveal">I create engaging and user-friendly digital experiences.</p>
+                <div class="hero-ctas reveal">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="https://www.figma.com/proto/3NBFQUZeSlM2MOKm1bI3gH/TIDE-taskmanager?node-id=34-212&t=V4jhx4kdOTV47Cq5-1&starting-point-node-id=34%3A212" target="_blank" rel="noopener" class="btn btn-secondary">View Figma Prototype</a>
+                </div>
+            </div>
+        </header>
+    <main>
+        <section class="section" id="projects">
+            <div class="container">
+                <p class="section-label">01 &#8212 Work</p>
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+
+                    <!-- Project cards will be added here -->
+
+                     <article class="card reveal">
+                        <span class="card-tag">Ui/UX Design</span>
+                        <h3 class="card-title">TIDE</h3>
+                        <p class="card-desc">A complete task-manager app design build in Figma: a token based design system, seven connected screens,and a clikable prototype. My first end-to-end project design.</p>
+        
+                        <div class="card-meta">
+                            <span class="chip">Figma</span>
+                            <span class="chip">Design System</span>
+                            <span class="chip">Prototype</span>
+                        </div>
+                        <a href="https://www.figma.com/proto/3NBFQUZeSlM2MOKm1bI3gH/TIDE-taskmanager?node-id=34-212&t=V4jhx4kdOTV47Cq5-1&starting-point-node-id=34%3A212" target="_blank" rel="noopener" class="card-link">View Prototype &#8599</a>
+                    </article>
+
+                    <article class="card reveal">
+                        <span class="card-tag">Web Development</span>
+                        <h3 class="card-title">FOLIO</h3>
+                        <p class="card-desc">This portfolio site. Hand-written semantic HTML, a CSS design system carried straight from my Figma tokens, and a dark-mode toggle in vanilla JavaScript. Deployed on Netlify</p>
+        
+                        <div class="card-meta">
+                            <span class="chip">HTML</span>
+                            <span class="chip">CSS</span>
+                            <span class="chip">JavaScript</span>
+                        </div>
+                        <a href="https://www.figma.com/proto/3NBFQUZeSlM2MOKm1bI3gH/TIDE-taskmanager?node-id=34-212&t=V4jhx4kdOTV47Cq5-1&starting-point-node-id=34%3A212" target="_blank" rel="noopener" class="card-link">View Code &#8599</a>
+                    </article>
+
+                    <article class="card reveal">
+                        <span class="card-tag">Automation</span>
+                        <h3 class="card-title">PULSE</h3>
+                        <p class="card-desc">Coming after Session-03: a Python bot that sends me a daily summary every morning, scheduled with GitHub Actions. My first taste of automation.</p>
+        
+                        <div class="card-meta">
+                            <span class="chip">Python</span>
+                            <span class="chip">GitHub Actions</span>
+                        </div>
+                        <a href="https://www.figma.com/proto/3NBFQUZeSlM2MOKm1bI3gH/TIDE-taskmanager?node-id=34-212&t=V4jhx4kdOTV47Cq5-1&starting-point-node-id=34%3A212" target="_blank" rel="noopener" class="card-link">View Code &#8599</a>
+                    </article>
+
+
+
+                </div>
+            </div>
+        </section>
+
+                 <!-- Skills Section -->
+
+        <section class="section section-alt" id="skills">
+            <div class="container">
+                <p class="section-label">02 &#8212; Toolkit</p>
+                <h2 class="section-title">Skills</h2>
+
+                <div class="skills-list">
+
+                    <div class="skill reveal">
+                        <div class="skill-head">
+                            <span class="skill-name">Figma &amp; UI Design</span>
+                            <span class="skill-pct">85%</span>
+                        </div>
+
+                        <div class="skill-track">
+                            <div class="skill-fill " style="--w: 85%; background: var(--primary);"></div>
+                        </div>
+                    </div>
+                    <div class="skill reveal">
+                        <div class="skill-head">
+                            <span class="skill-name">HTML &amp; CSS</span>
+                            <span class="skill-pct">75%</span>
+                        </div>
+                        <div class="skill-track">
+                            <div class="skill-fill " style="--w: 75%; background: var(--pri-low);"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill reveal">
+                        <div class="skill-head">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-pct">55%</span>
+                        </div>
+                        <div class="skill-track">
+                            <div class="skill-fill " style="--w: 55%; background: var(--pri-med);"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill reveal">
+                        <div class="skill-head">
+                            <span class="skill-name">Python (learning)</span>
+                            <span class="skill-pct">35%</span>
+                        </div>
+                        <div class="skill-track">
+                            <div class="skill-fill " style="--w: 35%; background: var(--pri-high);"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- Contact Section -->
+
+        <section class="section" id="contact">
+            <div class="container">
+                <p class="section-label">03 &#8212; Say Hello</p>
+                <h2 class="section-title">Contact</h2>
+                <p class="contact-lead">Open to Intenships, Freelance design, and good conversations. The fastest way to reach me is via email.</p>
+                
+                <div class="contact-links">
+                    <a href="mailto:abhishekdarsan@gmail.com" class="contact-link">
+                        <span class="contact-link-label">Email</span>
+                        <span class="contact-link-value">abhishekdarsan@gmail.com </span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/abhishekdarsan/" target="_blank" rel="noopener" class="contact-link">
+                        <span class="contact-link-label"> LinkedIn</span>
+                        <span class="contact-link-value">linkedin.com/in/abhishekdarsan &#8599;</span>
+                    </a>
+                    <a href="https://www.github.com/abhishekdarsan/" target="_blank" rel="noopener" class="contact-link">
+                        <span class="contact-link-label">GitHub</span>
+                        <span class="contact-link-value">github.com/abhishekdarsan &#8599;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+            <!footer section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Build from scratch with HTML, CSS &amp; JavaScript &#8212; ZERO2DEV 2026.</p>
+            <p class="footer-muted">&#169; 2026 Abhishekdarsan P B.Designed in Figma, coded by hand.</p>
+        </div>
+    </footer>
+
+    <button class="to-top" id="to-top" aria-label="Back to top">&#8593;</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
