@@ -40,12 +40,20 @@
         <section class="section" id="projects">
             <div class="container">
                 <p class="section-label">01 &#8212 Work</p>
-                <h2 class="section-title">Projects</h2>
+                <h2 class="section-title">Projects <span class="project-count">(3)</span></h2>
+                
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="code">Code</button>
+                </div>
+
                 <div class="projects-grid">
 
                     <!-- Project cards will be added here -->
 
-                     <article class="card reveal">
+                     <article class="card reveal" data-category="design">
                         <span class="card-tag">Ui/UX Design</span>
                         <h3 class="card-title">TIDE</h3>
                         <p class="card-desc">A complete task-manager app design build in Figma: a token based design system, seven connected screens,and a clikable prototype. My first end-to-end project design.</p>
@@ -58,7 +66,7 @@
                         <a href="https://www.figma.com/proto/3NBFQUZeSlM2MOKm1bI3gH/TIDE-taskmanager?node-id=34-212&t=V4jhx4kdOTV47Cq5-1&starting-point-node-id=34%3A212" target="_blank" rel="noopener" class="card-link">View Prototype &#8599</a>
                     </article>
 
-                    <article class="card reveal">
+                    <article class="card reveal" data-category="web">
                         <span class="card-tag">Web Development</span>
                         <h3 class="card-title">FOLIO</h3>
                         <p class="card-desc">This portfolio site. Hand-written semantic HTML, a CSS design system carried straight from my Figma tokens, and a dark-mode toggle in vanilla JavaScript. Deployed on Netlify</p>
@@ -71,7 +79,7 @@
                         <a href="https://www.figma.com/proto/3NBFQUZeSlM2MOKm1bI3gH/TIDE-taskmanager?node-id=34-212&t=V4jhx4kdOTV47Cq5-1&starting-point-node-id=34%3A212" target="_blank" rel="noopener" class="card-link">View Code &#8599</a>
                     </article>
 
-                    <article class="card reveal">
+                    <article class="card reveal" data-category="code">
                         <span class="card-tag">Automation</span>
                         <h3 class="card-title">PULSE</h3>
                         <p class="card-desc">Coming after Session-03: a Python bot that sends me a daily summary every morning, scheduled with GitHub Actions. My first taste of automation.</p>
@@ -86,14 +94,27 @@
 
 
                 </div>
+
+                <div class="project-embed reveal">
+                    <div class="project-embed-copy">
+                        <p class="section-label">02 &#8212 Prototype</p>
+                        <h3 class="section-title">Figma Prototype</h3>
+                        <p class="card-desc">Explore the TIDE task-manager prototype in a standalone interactive preview. It highlights the Session 1 UI flow, navigation, and polished screen interactions directly in the portfolio.</p>
+                    </div>
+                    <div class="figma-embed-wrapper">
+                        <iframe class="figma-embed" title="TIDE Figma Prototype" src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/3NBFQUZeSlM2MOKm1bI3gH/TIDE-taskmanager%3Fnode-id%3D34-212%26t%3DV4jhx4kdOTV47Cq5-1%26starting-point-node-id%3D34%253A212" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
         </section>
+
+        
 
                  <!-- Skills Section -->
 
         <section class="section section-alt" id="skills">
             <div class="container">
-                <p class="section-label">02 &#8212; Toolkit</p>
+                <p class="section-label">03 &#8212; Toolkit</p>
                 <h2 class="section-title">Skills</h2>
 
                 <div class="skills-list">
@@ -144,12 +165,44 @@
 
 
 
+        <section class="section section-alt" id="blog">
+            <div class="container">
+                <p class="section-label">04 &#8212; Reading</p>
+                <h2 class="section-title">Blog</h2>
+                <div class="blog-grid">
+                    <article class="card reveal">
+                        <span class="card-tag">Design</span>
+                        <h3 class="card-title">Building a Better Portfolio</h3>
+                        <p class="card-date">June 5, 2026</p>
+                        <p class="card-desc">Three key layout decisions that help your work feel easier to scan, quicker to understand, and more memorable for visitors.</p>
+                        <a href="#" class="card-link">Read more &#8594;</a>
+                    </article>
+                    <article class="card reveal">
+                        <span class="card-tag">Web</span>
+                        <h3 class="card-title">Responsive grids for modern sites</h3>
+                        <p class="card-date">May 22, 2026</p>
+                        <p class="card-desc">A short look at using CSS Grid to create flexible cards, clean spacing, and layouts that adapt without losing structure.</p>
+                        <a href="#" class="card-link">Read more &#8594;</a>
+                    </article>
+                    <article class="card reveal">
+                        <span class="card-tag">Code</span>
+                        <h3 class="card-title">JavaScript patterns I use daily</h3>
+                        <p class="card-date">April 14, 2026</p>
+                        <p class="card-desc">Why simple event-driven filtering, theme toggles, and modular helpers keep my portfolio easy to maintain.</p>
+                        <a href="#" class="card-link">Read more &#8594;</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+
 
         <!-- Contact Section -->
 
         <section class="section" id="contact">
             <div class="container">
-                <p class="section-label">03 &#8212; Say Hello</p>
+                <p class="section-label">05 &#8212; Say Hello</p>
                 <h2 class="section-title">Contact</h2>
                 <p class="contact-lead">Open to Intenships, Freelance design, and good conversations. The fastest way to reach me is via email.</p>
                 

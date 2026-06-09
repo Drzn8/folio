@@ -36,3 +36,36 @@ const observer = new IntersectionObserver((entries) => {
 revealItems.forEach((item) => {
     observer.observe(item)
 });
+
+// Project Filter Functionality
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.projects-grid .card');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const filterValue = btn.getAttribute('data-filter');
+        
+        // Update active button
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Filter and fade cards
+        let visibleCount = 0;
+        projectCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            
+            if (filterValue === 'all' || cardCategory === filterValue) {
+                card.classList.remove('hidden');
+                card.classList.add('visible');
+                visibleCount++;
+            } else {
+                card.classList.add('hidden');
+                card.classList.remove('visible');
+            }
+        });
+        
+        // Update project count
+        const countDisplay = document.querySelector('.project-count');
+        countDisplay.textContent = `(${visibleCount})`;
+    });
+});
