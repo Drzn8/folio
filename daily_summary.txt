@@ -7,6 +7,6 @@ WEATHER
 Thiruvananthapuram: 🌦️  +27°C
 
 TODAYS QUOTE
-"One of the really tough things is figuring out what questions to ask. Once you figure out the question, then the answer is relatively easy." - Elon Musk
+"If you don't read the newspaper, you're uninformed. If you read the newspaper, you're misinformed." - Mark Twain
 
 =====================================
