@@ -5,15 +5,15 @@ import requests
 
 # 1. Configuration from GitHub Secrets / Environment Variables
 API_KEY = os.environ.get("OPENWEATHER_API_KEY")
-LAT = os.environ.get("WEATHER_LAT", "10.77")   
-LON = os.environ.get("WEATHER_LON", "76.31")  
+LAT = os.environ.get("WEATHER_LAT", "10.772774")   
+LON = os.environ.get("WEATHER_LON", "76.376660")  
 EMAIL_USER = os.environ.get("SENDER_EMAIL")
 EMAIL_PASS = os.environ.get("SENDER_PASSWORD")
 RECEIVER_EMAIL = os.environ.get("RECEIVER_EMAIL")
 
 # 2. Fetch data from the One Call 4.0 API
 # Note: Adding '&units=metric' ensures temperature is in Celsius
-url = f"https://api.openweathermap.org/data/4.0/onecall/current?lat={LAT}&lon={LON}&appid={API_KEY}&units=metric"
+url = f"https://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LON}&appid={API_KEY}&units=metric"
 
 try:
     response = requests.get(url)
