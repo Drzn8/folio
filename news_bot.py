@@ -20,17 +20,19 @@ def scrape_mathrubhumi():
         response = requests.get(url, headers=HEADERS, timeout=10)
         soup = BeautifulSoup(response.text, "html.parser")
         
-        articles = soup.find_all("div", class_="mpp-story-card") or soup.find_all("div", class_="card")
-        for article in articles[:5]:
-            title_element = article.find("h2") or article.find("h3")
-            link_element = article.find("a")
-            
-            if title_element and link_element:
+        # കൂടുതൽ പൊതുവായ ലിങ്കുകളും തലക്കെട്ടുകളും തിരയുന്നു
+        for link_element in soup.find_all("a"):
+            title_element = link_element.find("h2") or link_element.find("h3")
+            if title_element:
                 title = title_element.get_text(strip=True)
                 link = link_element["href"]
-                if not link.startswith("http"):
-                    link = "https://www.mathrubhumi.com" + link
-                headlines.append({"title": title, "link": link})
+                if title and link and len(title) > 10:
+                    if not link.startswith("http"):
+                        link = "https://www.mathrubhumi.com" + link
+                    if {"title": title, "link": link} not in headlines:
+                        headlines.append({"title": title, "link": link})
+            if len(headlines) >= 5:
+                break
     except Exception as e:
         print(f"Error Mathrubhumi: {e}")
     return headlines
@@ -42,16 +44,19 @@ def scrape_manorama():
         response = requests.get(url, headers=HEADERS, timeout=10)
         soup = BeautifulSoup(response.text, "html.parser")
         
-        for item in soup.find_all("div", class_="story-list-item")[:5]:
-            title_element = item.find("h2") or item.find("a", class_="story-title")
-            link_element = item.find("a")
-            
-            if title_element and link_element:
+        # മാതൃഭൂമിക്ക് സമാനമായി പൊതുവായ ടാഗുകൾ പരിശോധിക്കുന്നു
+        for link_element in soup.find_all("a"):
+            title_element = link_element.find("h2") or link_element.find("h1")
+            if title_element:
                 title = title_element.get_text(strip=True)
                 link = link_element["href"]
-                if not link.startswith("http"):
-                    link = "https://www.manoramaonline.com" + link
-                headlines.append({"title": title, "link": link})
+                if title and link and len(title) > 10:
+                    if not link.startswith("http"):
+                        link = "https://www.manoramaonline.com" + link
+                    if {"title": title, "link": link} not in headlines:
+                        headlines.append({"title": title, "link": link})
+            if len(headlines) >= 5:
+                break
     except Exception as e:
         print(f"Error Manorama: {e}")
     return headlines
@@ -63,14 +68,18 @@ def scrape_asianet():
         response = requests.get(url, headers=HEADERS, timeout=10)
         soup = BeautifulSoup(response.text, "html.parser")
         
-        for row in soup.find_all("div", class_="news-box")[:5]:
-            title_element = row.find("h3") or row.find("a")
-            link_element = row.find("a")
-            
-            if title_element and link_element:
+        for link_element in soup.find_all("a"):
+            title_element = link_element.find("h3") or link_element.find("h2")
+            if title_element:
                 title = title_element.get_text(strip=True)
                 link = link_element["href"]
-                headlines.append({"title": title, "link": link})
+                if title and link and len(title) > 10:
+                    if not link.startswith("http"):
+                        link = "https://www.asianetnews.com" + link
+                    if {"title": title, "link": link} not in headlines:
+                        headlines.append({"title": title, "link": link})
+            if len(headlines) >= 5:
+                break
     except Exception as e:
         print(f"Error Asianet: {e}")
     return headlines
