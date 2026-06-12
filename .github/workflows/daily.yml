@@ -1,9 +1,9 @@
-# The workflow name - appears in the GitHub Actions tab
+
 name: Pulse - Daily Summary Bot
 
-# When to run this workflow
+
 on:
-  # Scheduled run: 2:30 AM UTC = 8:00 AM IST
+  
   schedule:
     - cron: '30 2 * * *'
 
