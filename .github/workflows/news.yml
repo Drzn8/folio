@@ -1,4 +1,4 @@
-name: Malayalam Daily Digest Bot
+name: Daily News Bot
 
 on:
   schedule:
