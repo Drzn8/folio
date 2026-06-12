@@ -27,8 +27,8 @@ try:
     print(f"Current temperature in {city_name} ({LAT}, {LON}): {temp}°C")
     print(f"Weather conditions: {', '.join(weather_main)}")
 
-    # 3. Check thresholds (Temp < 35°C or rain)
-    is_hot = temp < 35
+    # 3. Check thresholds (Temp > 35°C or rain)
+    is_hot = temp > 35
     is_raining = "rain" in weather_main
 
     if is_hot or is_raining:
@@ -37,7 +37,7 @@ try:
         subject = f"Weather Alert for {city_name}!"
         body = f"An automated alert has been triggered for your monitored location.\n\n"
         if is_hot:
-            body += f"⚠️ High Temperature Alert: It is currently {temp}°C (Threshold: <35°C).\n"
+            body += f"⚠️ High Temperature Alert: It is currently {temp}°C (Threshold: >35°C).\n"
         if is_raining:
             body += f"🌧️ Rain Alert: Precipitation has been detected in the current conditions.\n"
 
