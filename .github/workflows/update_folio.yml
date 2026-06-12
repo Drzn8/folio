@@ -33,7 +33,7 @@ jobs:
         env:
           PORTFOLIO_USERNAME: "Drzn8"
           CUSTOM_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python generate_projects.py
+        run: python project_gen_bot/generate_projects.py
 
       - name: Sync and Commit Dynamic Changes
         run: |
