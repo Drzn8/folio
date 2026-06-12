@@ -10,7 +10,8 @@ EMAIL_PASS = os.environ.get("SENDER_PASSWORD")
 RECEIVER_EMAIL = os.environ.get("RECEIVER_EMAIL")
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Accept-Language": "ml,en-US;q=0.9,en;q=0.8"
 }
 
 def scrape_mathrubhumi():
@@ -20,13 +21,12 @@ def scrape_mathrubhumi():
         response = requests.get(url, headers=HEADERS, timeout=10)
         soup = BeautifulSoup(response.text, "html.parser")
         
-        # കൂടുതൽ പൊതുവായ ലിങ്കുകളും തലക്കെട്ടുകളും തിരയുന്നു
         for link_element in soup.find_all("a"):
             title_element = link_element.find("h2") or link_element.find("h3")
             if title_element:
                 title = title_element.get_text(strip=True)
                 link = link_element["href"]
-                if title and link and len(title) > 10:
+                if title and link and len(title) > 15:
                     if not link.startswith("http"):
                         link = "https://www.mathrubhumi.com" + link
                     if {"title": title, "link": link} not in headlines:
@@ -44,13 +44,11 @@ def scrape_manorama():
         response = requests.get(url, headers=HEADERS, timeout=10)
         soup = BeautifulSoup(response.text, "html.parser")
         
-        # മാതൃഭൂമിക്ക് സമാനമായി പൊതുവായ ടാഗുകൾ പരിശോധിക്കുന്നു
         for link_element in soup.find_all("a"):
-            title_element = link_element.find("h2") or link_element.find("h1")
-            if title_element:
-                title = title_element.get_text(strip=True)
-                link = link_element["href"]
-                if title and link and len(title) > 10:
+            link = link_element.get("href", "")
+            if ".html" in link and any(keyword in link for keyword in ["/news/", "/kerala/"]):
+                title = link_element.get_text(strip=True)
+                if title and len(title) > 20 and not title.startswith("തീയതി"):
                     if not link.startswith("http"):
                         link = "https://www.manoramaonline.com" + link
                     if {"title": title, "link": link} not in headlines:
@@ -69,13 +67,10 @@ def scrape_asianet():
         soup = BeautifulSoup(response.text, "html.parser")
         
         for link_element in soup.find_all("a"):
-            title_element = link_element.find("h3") or link_element.find("h2")
-            if title_element:
-                title = title_element.get_text(strip=True)
-                link = link_element["href"]
-                if title and link and len(title) > 10:
-                    if not link.startswith("http"):
-                        link = "https://www.asianetnews.com" + link
+            link = link_element.get("href", "")
+            if "-" in link and any(char.isdigit() for char in link) and link.startswith("https://www.asianetnews.com/"):
+                title = link_element.get_text(strip=True)
+                if title and len(title) > 20:
                     if {"title": title, "link": link} not in headlines:
                         headlines.append({"title": title, "link": link})
             if len(headlines) >= 5:
